@@ -14,5 +14,6 @@
 > Thank you for reading
 ```
 Credits: Annika O'Rourke
+Now on Visual Studio Code!
 ```
 ***
