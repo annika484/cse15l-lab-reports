@@ -55,7 +55,8 @@ Commands will look different on your own computer and after remotely connecting.
 * ls <directory> where <directory> is /home/linux/ieng6/cs15lsp22/cs15lsp22abc, where the abc is one of the other group members’ username
 * cp /home/linux/ieng6/cs15lsp22/public/hello.txt ~/
 * cat /home/linux/ieng6/cs15lsp22/public/hello.txt
-
+  
+  
 Here is an example of what it might look like when you try them on your computer: 
   
   <img width="831" alt="Screen Shot 2022-04-10 at 10 09 13 PM" src="https://user-images.githubusercontent.com/103288525/162668833-79ad29e9-6374-438a-a3a5-9e32f45b9748.png">
@@ -87,7 +88,7 @@ Here is an example of what it might look like when you try them on your computer
   When it prompts you to input your password, do so. 
 Log into ieng6 with ssh again, and use ls. You should see the file there in your home directory! Now you can run it on the ieng6 computer using javac and java.
   
-  ## Step 6: How to set an SSH Key
+## Step 6: How to set an SSH Key
   
   Sometimes it is annoying to input the password multiple times. Instead, let's use a command to skip this step. We will input commands to do this, as shown (the exact commands will be shown following:
   
@@ -140,6 +141,7 @@ $ scp /Users/<user-name>/.ssh/id_rsa.pub cs15lsp22zz@ieng6.ucsd.edu:~/.ssh/autho
   
  Congrats! Now you can ssh or scp from this client to the server without entering your password.
 
+  
   ## Step 7: Optimizing Remote Running
   
   There are many ways to make remote running easier. For example, to run multiple commands at the same time, seperate them by semicolons. Shown here: 
@@ -149,9 +151,10 @@ $ scp /Users/<user-name>/.ssh/id_rsa.pub cs15lsp22zz@ieng6.ucsd.edu:~/.ssh/autho
   ```
   
   Also, you can use the up arrow to recall the last command that you entered.
-  For example, seen here, the second command line wasn't typed but recalled from the last command. It was much easier to do this than re-type the commabnd. 
+  For example, seen here, the second command line wasn't typed but recalled from the last command. It was much easier to do this than re-type the command.
+  
   <img width="903" alt="Screen Shot 2022-04-10 at 11 12 50 PM" src="https://user-images.githubusercontent.com/103288525/162675654-addcbe92-6616-4dac-91fc-9b1afbd9b5a8.png">
   
-  ## Thank you for reading! I hope you learned about remote access. 
+**Thank you for reading! I hope you learned about remote access.**
   
   
