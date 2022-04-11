@@ -85,3 +85,73 @@ Here is an example of what it might look like when you try them on your computer
   scp WhereAmI.java cs15lsp22zz@ieng6.ucsd.edu:~/
   ```
   When it prompts you to input your password, do so. 
+Log into ieng6 with ssh again, and use ls. You should see the file there in your home directory! Now you can run it on the ieng6 computer using javac and java.
+  
+  ## Step 6: How to set an SSH Key
+  
+  Sometimes it is annoying to input the password multiple times. Instead, let's use a command to skip this step. We will input commands to do this, as shown (the exact commands will be shown following:
+  
+  <img width="805" alt="Screen Shot 2022-04-10 at 11 06 53 PM" src="https://user-images.githubusercontent.com/103288525/162674893-fa5d4fa5-9949-437a-a47d-aff281abf1ae.png">
+
+  
+  Here is how to run it:
+  
+```
+# on client (your computer)
+$ ssh-keygen
+Generating public/private rsa key pair.
+Enter file in which to save the key (/Users/<user-name>/.ssh/id_rsa): /Users/<user-name>/.ssh/id_rsa
+Enter passphrase (empty for no passphrase): 
+```
+  
+**Do not add a passphrase for this step.**
+
+```
+Enter same passphrase again: 
+Your identification has been saved in /Users/<user-name>/.ssh/id_rsa.
+Your public key has been saved in /Users/<user-name>/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:jZaZH6fI8E2I1D35hnvGeBePQ4ELOf2Ge+G0XknoXp0 <user-name>@<system>.local
+The key's randomart image is:
++---[RSA 3072]----+
+|                 |
+|       . . + .   |
+|      . . B o .  |
+|     . . B * +.. |
+|      o S = *.B. |
+|       = = O.*.*+|
+|        + * *.BE+|
+|           +.+.o |
+|             ..  |
++----[SHA256]-----+
+```
+  
+  Next, follow the steps to copy the public key to the .ssh directory of your user account on the server.
+```
+$ ssh cs15lsp22zz@ieng6.ucsd.edu
+<Enter Password>
+# now on server
+$ mkdir .ssh
+$ <logout>
+# back on client
+$ scp /Users/<user-name>/.ssh/id_rsa.pub cs15lsp22zz@ieng6.ucsd.edu:~/.ssh/authorized_keys
+# You use your username and the path you saw in the command above
+```
+  
+ Congrats! Now you can ssh or scp from this client to the server without entering your password.
+
+  ## Step 7: Optimizing Remote Running
+  
+  There are many ways to make remote running easier. For example, to run multiple commands at the same time, seperate them by semicolons. Shown here: 
+  
+  ```
+  $ cp WhereAmI.java OtherMain.java; javac OtherMain.java; java WhereAmI
+  ```
+  
+  Also, you can use the up arrow to recall the last command that you entered.
+  For example, seen here, the second command line wasn't typed but recalled from the last command. It was much easier to do this than re-type the commabnd. 
+  <img width="903" alt="Screen Shot 2022-04-10 at 11 12 50 PM" src="https://user-images.githubusercontent.com/103288525/162675654-addcbe92-6616-4dac-91fc-9b1afbd9b5a8.png">
+  
+  ## Thank you for reading! I hope you learned about remote access. 
+  
+  
