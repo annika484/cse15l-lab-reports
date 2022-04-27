@@ -142,7 +142,7 @@ $ scp /Users/<user-name>/.ssh/id_rsa.pub cs15lsp22zz@ieng6.ucsd.edu:~/.ssh/autho
  Congrats! Now you can ssh or scp from this client to the server without entering your password.
 
   
-  ## Step 7: Optimizing Remote Running
+ ## Step 7: Optimizing Remote Running
   
   There are many ways to make remote running easier. For example, to run multiple commands at the same time, seperate them by semicolons. Shown here: 
   
